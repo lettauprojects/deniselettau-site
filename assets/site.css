@@ -1,0 +1,29 @@
+html, body { margin: 0; padding: 0; background: #FBF9F5; }
+body { font-family: "Montserrat", system-ui, sans-serif; color: #3A332D; -webkit-font-smoothing: antialiased; }
+
+a { color: #1C1815; text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 4px; text-decoration-thickness: 1.5px; transition: text-decoration-color 200ms cubic-bezier(.22,.61,.36,1); }
+a:hover { text-decoration-color: #EC4933; }
+
+img { display: block; }
+
+.btn-red:hover { background: #D23C29 !important; }
+.btn-bone:hover { background: #FBF9F5 !important; }
+
+.title-link { text-underline-offset: 5px; }
+
+input:focus, textarea:focus { outline: 2px solid #EC4933; outline-offset: 1px; }
+
+/* Responsive nav — desktop links vs mobile Menu button (breakpoint 1180px) */
+.menu-btn { display: none; }
+.nav-mobile { display: none; }
+@media (max-width: 1179px) {
+  .nav-links { display: none !important; }
+  .menu-btn { display: inline-block !important; }
+  .nav-mobile.open { display: flex !important; }
+}
+
+/* Scroll reveal — falls back to a plain fade-in on load where unsupported */
+@keyframes lettauRise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] { animation: lettauRise 0.8s cubic-bezier(.22,.61,.36,1) both; animation-timeline: view(); animation-range: entry 0% entry 25%; }
+}
